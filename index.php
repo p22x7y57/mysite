@@ -3,47 +3,42 @@
         <title>SANDBOX</title>
         <meta charset="utf-8">
     </head>
-    <body>   
+    <body>
+
         <?php
+        function addColor($number) {
+            $num = str_split((string)$number);
+            foreach ($num as $value)
+                if ($value == 1) 
+                    echo '<font color="red">' . $value . '</font>';
+                elseif ($value == 2)
+                    echo '<font color="green">' . $value . '</font>';
+                elseif ($value == 3)
+                    echo '<font color="yellow">' . $value . '</font>';
+                elseif ($value == 4)
+                    echo '<font color="blue">' . $value . '</font>';
+                else
+                    echo $value;
+        }
 
-        //function colorNumber($number, $color) {
-            //echo '<font color="' . $color . '"><strong>' . $number . '</strong></font>';
-            //return $number;
-            //}
+        function addTableRow ($i_min, $i_max) { //$i_min, $i_max это диапазон первого множителя в произведении двух чисел
+            echo '<tr>';
+            for ($i=$i_min;$i<=$i_max;$i++) {
+                echo "<td>";
+                for ($z=1;$z<=10;$z++) {
+                    addColor($i) . addColor(' * ') . addColor($z) . addColor(' = ') . addColor($i*$z) . addColor('<br>'); }
 
-        //sayHello(1, 'red'); //call the function
+            echo "</td>";
+            }
+            echo "</tr>";
+        }
+
         echo '<table border=1>';
-        echo '<tr>';
-        for ($i=1;$i<=5;$i++) {
-        echo "<td>";
-            for ($z=0;$z<=10;$z++) {
-            //$a = (string)$i;
-            //$b = (string)$z;
-            //if ($i | $z == 1) {
-                //$a = '<font color="red"><strong>1</strong></font>';
-            	//$b = '<font color="red"><strong>1</strong></font>';
-            //}
-
-
-            echo $i . ' * ' . $z . ' = ' . ($i*$z) . '<br>'; }
-
-        echo "</td>";
-        }
-        ?>
-        </tr>
-        <tr>
-        <?php
-        for ($i=6;$i<=10;$i++) {
-        echo "<td>";
-            for ($z=1;$z<=10;$z++) {
-            echo $i.' * '.$z.' = '.($i*$z).'<br>'; }
-
-        echo "</td>";
-        }
-        echo '</tr>';
+            addTableRow(1, 5); //строка таблицы от 1 до 5
+            addTableRow(6, 10); //строка таблицы от 6 до 10
         echo '</table>';
+
         ?>
-        
-        <font color="red"><strong>HI</strong></font>
+
     </body>
 </html>
