@@ -3,8 +3,12 @@
         <title>SANDBOX</title>
         <meta charset="utf-8">
     </head>
+    <nav>
+        <a href="#">урок 1</a>
+        <a href="#">урок 2</a>
+    </nav>
     <body>
-
+        <main>
         <?php
         function addColor($number) {
             $num = str_split((string)$number);
@@ -39,6 +43,9 @@
         echo '</table>';
 
         ?>
-
+    </main>
+    <footer>
+        Copyright
+    </footer>
     </body>
 </html>
