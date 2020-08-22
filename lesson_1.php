@@ -10,27 +10,13 @@
     <body>
         <main>
         <?php
-        function addColor($number) {
-            $num = str_split((string)$number);
-            foreach ($num as $value)
-                if ($value == 1) 
-                    echo '<font color="red">' . $value . '</font>';
-                elseif ($value == 2)
-                    echo '<font color="green">' . $value . '</font>';
-                elseif ($value == 3)
-                    echo '<font color="yellow">' . $value . '</font>';
-                elseif ($value == 4)
-                    echo '<font color="blue">' . $value . '</font>';
-                else
-                    echo $value;
-        }
 
         function addTableRow ($i_min, $i_max) { //$i_min, $i_max это диапазон первого множителя в произведении двух чисел
             echo '<tr>';
             for ($i=$i_min;$i<=$i_max;$i++) {
                 echo "<td>";
                 for ($z=1;$z<=10;$z++) {
-                    addColor($i) . addColor(' * ') . addColor($z) . addColor(' = ') . addColor($i*$z) . addColor('<br>'); }
+                    echo $i . ' * ' . $z . ' = ' . ($i*$z) . '<br>'; }
 
             echo "</td>";
             }
@@ -49,3 +35,4 @@
     </footer>
     </body>
 </html>
+
