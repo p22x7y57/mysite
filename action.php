@@ -10,11 +10,23 @@
     </nav>
     <body>
         <main>
+        	<br>
             <?php
-                echo "Hello, NIX Education";
-            ?>
+            	function utf8_strrev($str){
+				    preg_match_all('/./us', $str, $ar);
+				    	return join('', array_reverse($ar[0]));
+				}
+
+				echo utf8_strrev(htmlspecialchars($_POST['name']));
+			?>
+			<form action="lesson_3.php" method="back">
+                <p><input  value="Назад" type="submit" /></p>
+            </form>
         </main>
         <footer>
         </footer>
     </body>
 </html>
+
+
+

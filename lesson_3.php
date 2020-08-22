@@ -10,11 +10,13 @@
     </nav>
     <body>
         <main>
-            <?php
-                echo "Hello, NIX Education";
-            ?>
+            <form action="action.php" method="post">
+                <p><input type="text" name="name" /></p>
+                <p><input value="Отправить" type="submit" /></p>
+            </form>
         </main>
         <footer>
         </footer>
     </body>
 </html>
+
